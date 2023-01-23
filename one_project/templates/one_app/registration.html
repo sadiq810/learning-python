@@ -1,0 +1,18 @@
+{% extends 'one_app/base.html' %}
+{% block content %}
+<div class="row">
+ {% if registered %}
+    <h1>Thanks for registration</h1>
+ {% else %}
+    <h2>Register Here</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ user_form.as_p }}
+        {{ profile_form.as_p }}
+
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+ {% endif %}
+
+</div>
+{% endblock %}

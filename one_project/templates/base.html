@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Django Level 2</title>
+    <link rel="stylesheet" href="{% static "styles.css" %}" />
+    <link rel="stylesheet" href="{% static "bootstrap.min.css" %}" />
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <a href="{% url 'one_app:createUser' %}" class="btn btn-primary">createUser</a>
+        <a href="{% url 'one_app:createUser2' %}" class="btn btn-danger">createUser2</a>
+        <a href="{% url 'admin:index' %}" class="btn btn-secondary">admin</a>
+        <a href="{% url 'one_app:home' %}" class="btn btn-danger">Home</a>
+    </div>
+    {% block content %}
+    {% endblock %}
+</div>
+</body>
+</html>

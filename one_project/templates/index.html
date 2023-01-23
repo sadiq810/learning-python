@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="row">
+        <h1>Welcome to Django Level Two: {{ title|cut:'Hello' }}</h1>
+            {% if access_records %}
+                <table class="table table-bordered table-responsive table-striped">
+                <thead>
+                <tr>
+                    <td>Site Name</td>
+                <td>Date Accessed</td>
+                </tr>
+                </thead>
+                <tbody>
+                {% for acc in access_records %}
+                    <tr>
+                       <td>{{ acc.name|upper  }}</td>
+                       <td>{{ acc.date|date:'Y-m-d' }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+                </table>
+
+
+            {% else %}
+             <h4>No Access Records found!</h4>
+            {% endif %}
+    </div>
+{% endblock %}

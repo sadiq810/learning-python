@@ -1,0 +1,1 @@
+https://faker.readthedocs.io/en/master/providers/faker.providers.lorem.html

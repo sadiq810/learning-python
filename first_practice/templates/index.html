@@ -1,0 +1,20 @@
+{% extends "_layouts/master.html" %}
+{% block container %}
+    <div class="jumbotran">
+      <h1>Public Blogs list</h1>
+      <div class="row">
+          {% for blog in blogs %}
+              <div class="card my-2">
+                 <div class="card-header">
+                     {{ blog.title }}
+                 </div>
+                 <div class="card-body">
+                     {{ blog.detail }} <br/>
+                     {{ blog.user_id }} <br/>
+                     {{ blog.slug }}
+                 </div>
+              </div>
+          {% endfor %}
+      </div>
+    </div>
+{% endblock %}
